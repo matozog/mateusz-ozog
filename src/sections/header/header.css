@@ -1,0 +1,8 @@
+@tailwind components;
+@tailwind variants;
+
+@layer components {
+    .contact-button {
+        @apply hover:cursor-pointer;
+    }
+}
