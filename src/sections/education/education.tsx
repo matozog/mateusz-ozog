@@ -4,18 +4,20 @@ import MuiAccordion from '../../components/accordion/mui-accordion';
 const Education = () => {
     const educationData: Array<IMuiAccordionItem> = [
         {
-            details: 'First step',
-            title: 'Engineering',
+            details:
+                'Wroclaw University of Science and Technology, Field of study: Computer science',
+            title: '2019 - 2020 - Master of Information Systems in Medicine',
         },
         {
-            details: 'Second step',
-            title: 'Master',
+            details:
+                'Wroclaw University of Science and Technology, Field of study: Computer science',
+            title: '2015 - 2019 - Bachelor of IT Systems Engineering',
         },
     ];
 
     return (
         <div>
-            <span className="w-100 flex justify-center text-3xl">
+            <span className="w-100 flex justify-center text-3xl mb-6">
                 Education
             </span>
             <MuiAccordion accordionItems={educationData} />

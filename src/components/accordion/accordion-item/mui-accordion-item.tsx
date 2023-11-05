@@ -23,9 +23,9 @@ const MuiAccordionItem: FC<IMuiAccordionItemProps> = ({
     titleText,
 }) => {
     return (
-        <Accordion>
+        <Accordion className="w-full bg-black text-white">
             <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={<ExpandMoreIcon className="text-white" />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
             >

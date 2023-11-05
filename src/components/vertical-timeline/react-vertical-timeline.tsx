@@ -5,12 +5,44 @@ import {
     VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 
+import { FC } from 'react';
 import WorkIcon from '@mui/icons-material/Work';
 
-const ReactVerticalTimeline = () => {
+export interface ITimelineElementProps {
+    date: string;
+    content: JSX.Element;
+}
+
+interface IReactVerticalTimelineProps {
+    timelineElements: Array<ITimelineElementProps>;
+}
+
+const ReactVerticalTimeline: FC<IReactVerticalTimelineProps> = ({
+    timelineElements,
+}) => {
     return (
         <VerticalTimeline>
-            <VerticalTimelineElement
+            {timelineElements.map((element) => (
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                        background: '#000',
+                        color: '#fff',
+                    }}
+                    contentArrowStyle={{
+                        borderRight: '7px solid  #000',
+                    }}
+                    iconStyle={{
+                        background: '#000',
+                        color: '#fff',
+                    }}
+                    icon={<WorkIcon />}
+                    date={element.date}
+                >
+                    {element.content}
+                </VerticalTimelineElement>
+            ))}
+            {/* <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 contentStyle={{
                     background: 'rgb(33, 150, 243)',
@@ -35,6 +67,10 @@ const ReactVerticalTimeline = () => {
                 </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+                contentStyle={{
+                    background: 'rgb(33, 150, 243)',
+                    color: '#fff',
+                }}
                 className="vertical-timeline-element--work"
                 date="2010 - 2011"
                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
@@ -52,6 +88,10 @@ const ReactVerticalTimeline = () => {
                 </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+                contentStyle={{
+                    background: 'rgb(33, 150, 243)',
+                    color: '#fff',
+                }}
                 className="vertical-timeline-element--work"
                 date="2008 - 2010"
                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
@@ -66,6 +106,10 @@ const ReactVerticalTimeline = () => {
                 <p>User Experience, Visual Design</p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+                contentStyle={{
+                    background: 'rgb(33, 150, 243)',
+                    color: '#fff',
+                }}
                 className="vertical-timeline-element--work"
                 date="2006 - 2008"
                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
@@ -78,7 +122,7 @@ const ReactVerticalTimeline = () => {
                     San Francisco, CA
                 </h4>
                 <p>User Experience, Visual Design</p>
-            </VerticalTimelineElement>
+            </VerticalTimelineElement> */}
         </VerticalTimeline>
     );
 };

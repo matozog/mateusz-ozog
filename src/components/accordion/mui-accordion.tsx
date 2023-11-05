@@ -10,7 +10,7 @@ interface IMuiAccordionProps {
 
 const MuiAccordion: FC<IMuiAccordionProps> = ({ accordionItems }) => {
     return (
-        <div>
+        <div className="gap-y-4 flex-col flex">
             {accordionItems.map((item, index) => (
                 <MuiAccordionItem
                     detailsText={item.details}

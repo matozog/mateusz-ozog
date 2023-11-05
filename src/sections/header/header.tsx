@@ -18,7 +18,7 @@ const Header = () => {
     const handleOnClickEducationLink = () => undefined;
 
     return (
-        <div className="flex flex-row justify-between top-0 sticky m-3">
+        <div className="flex flex-row justify-between top-0 sticky p-3 bg-black z-50">
             <div className="flex gap-x-5">
                 <LinkedInIcon className="contact-button" fontSize="large" />
                 <GitHubIcon className="contact-button" fontSize="large" />
