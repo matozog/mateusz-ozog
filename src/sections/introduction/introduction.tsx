@@ -6,15 +6,9 @@ const Introduction = () => {
             style={{
                 filter: 'drop-shadow(-1px 6px 3px rgba(0, 0, 0, 0.5))',
             }}
+            className="gap-y-8 flex flex-col"
         >
             <div className="sm:mx-0 introduction-container bg-black p-10">
-                <div className="float-right">
-                    <img
-                        src="src/assets/Mateusz_Ozog.jpg"
-                        className="rounded-full ml-4 mb-2 mr-2 border-white border-2 p-2"
-                        width={125}
-                    />
-                </div>
                 <span className="text-justify block text-lg leading-relaxed">
                     Hi everyone! My name is Mateusz Ożóg and here are a few
                     words about me. I graduated Wroclaw University of Science

@@ -3,31 +3,48 @@ import {
     Card,
     CardActions,
     CardContent,
-    CardMedia,
     Typography,
 } from '@mui/material';
 
-const ProjectCard = () => {
+import { FC } from 'react';
+
+export interface IProjectCard {
+    title: string;
+    description: string;
+    technologies: string[];
+    linkToGithub: string;
+    linkToWebpage: string;
+}
+
+interface IProjectCardProps {
+    projectCard: IProjectCard;
+}
+
+const ProjectCard: FC<IProjectCardProps> = ({ projectCard }) => {
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-                sx={{ height: 140 }}
-                image="/static/images/cards/contemplative-reptile.jpg"
-                title="green iguana"
-            />
-            <CardContent>
+        <Card sx={{ maxWidth: 345 }} className="bg-black text-white">
+            <CardContent className="text-white">
                 <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    {projectCard.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                <Typography variant="body2" className="text-white">
+                    {projectCard.description}
                 </Typography>
+                <div className="flex gap-4">
+                    {projectCard.technologies.map((technique, index) => (
+                        <Typography
+                            key={`${projectCard.title}_${technique}-${index}`}
+                            variant="body2"
+                            className="text-white"
+                        >
+                            {technique}
+                        </Typography>
+                    ))}
+                </div>
             </CardContent>
             <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+                <Button size="small">Open in browser</Button>
+                <Button size="small">Open GitHub</Button>
             </CardActions>
         </Card>
     );

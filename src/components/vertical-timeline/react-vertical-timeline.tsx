@@ -22,8 +22,9 @@ const ReactVerticalTimeline: FC<IReactVerticalTimelineProps> = ({
 }) => {
     return (
         <VerticalTimeline>
-            {timelineElements.map((element) => (
+            {timelineElements.map((element, index) => (
                 <VerticalTimelineElement
+                    key={index}
                     className="vertical-timeline-element--work"
                     contentStyle={{
                         background: '#000',

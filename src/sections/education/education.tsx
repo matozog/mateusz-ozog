@@ -16,7 +16,7 @@ const Education = () => {
     ];
 
     return (
-        <div>
+        <div id="education-container">
             <span className="w-100 flex justify-center text-3xl mb-6">
                 Education
             </span>

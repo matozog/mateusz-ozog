@@ -8,7 +8,7 @@ interface ILinkButtonProps {
 const LinkButton: FC<ILinkButtonProps> = ({ text, onClick }) => {
     return (
         <div
-            className="text-lg hover:cursor-pointer hover:underline"
+            className="text-lg hover:cursor-pointer hover:underline hover:text-[#185f28]"
             onClick={onClick}
         >
             {text}

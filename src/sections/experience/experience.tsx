@@ -23,7 +23,7 @@ const Experience = () => {
     ];
 
     return (
-        <div>
+        <div id="experience-container">
             <span className="w-100 flex justify-center text-3xl mb-6">
                 Experience
             </span>

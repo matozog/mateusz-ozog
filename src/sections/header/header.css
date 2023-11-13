@@ -3,6 +3,12 @@
 
 @layer components {
     .contact-button {
+        &:hover {
+            transition: all 0.2s linear;
+            transform: scale(1.25);
+            color: #185f28;
+        }
+
         @apply hover:cursor-pointer;
     }
 }
