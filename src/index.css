@@ -1,3 +1,5 @@
+@import './assets/fonts/fonts.css';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,700&display=swap');
 /**
  * This injects Tailwind's base styles and any base styles registered by
  * plugins.
@@ -30,7 +32,8 @@ html {
 }
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
     line-height: 1.5;
     font-weight: 400;
 

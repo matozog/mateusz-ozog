@@ -1,3 +1,5 @@
+import './components/styles/common-headers.css';
+
 import Education from './sections/education/education';
 import Experience from './sections/experience/experience';
 import Footer from './sections/footer/footer';
@@ -12,10 +14,10 @@ function App() {
         window.history.scrollRestoration = 'manual';
     }, []);
     return (
-        <div className="h-full w-full flex flex-col gap-y-6">
+        <div className="h-full w-full flex flex-col gap-y-6 overflow-y-auto">
             <Header />
             <HomeScreen />
-            <div className="flex flex-col m-6 mt-2 gap-y-8 justify-center max-w-screen-lg sm:mx-auto mx-4">
+            <div className="flex flex-col m-6 mt-2 gap-y-16 md:gap-y-24 justify-center max-w-screen-lg sm:mx-auto mx-4">
                 <Introduction />
                 <Education />
                 <Experience />

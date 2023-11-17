@@ -11,4 +11,12 @@
 
         @apply hover:cursor-pointer;
     }
+
+    .mobile-menu-hidden {
+        height: 0;
+    }
+
+    .mobile-menu-open {
+        height: 130px;
+    }
 }

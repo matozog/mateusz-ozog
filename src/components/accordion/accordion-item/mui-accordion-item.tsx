@@ -23,16 +23,23 @@ const MuiAccordionItem: FC<IMuiAccordionItemProps> = ({
     titleText,
 }) => {
     return (
-        <Accordion className="w-full bg-black text-white">
+        <Accordion className="w-full bg-dark-color text-white">
             <AccordionSummary
-                expandIcon={<ExpandMoreIcon className="text-white" />}
+                className="rounded-2xl"
+                expandIcon={
+                    <ExpandMoreIcon className="text-white" fontSize="large" />
+                }
                 aria-controls="panel1a-content"
                 id="panel1a-header"
             >
-                <Typography>{titleText}</Typography>
+                <Typography className="text-lg md:text-2xl p-2 md:p-4 font-[Ubuntu]">
+                    {titleText}
+                </Typography>
             </AccordionSummary>
             <AccordionDetails>
-                <Typography>{detailsText}</Typography>
+                <Typography className="text-lg md:text-2xl p-2 md:p-4 font-[Ubuntu]">
+                    {detailsText}
+                </Typography>
             </AccordionDetails>
         </Accordion>
     );

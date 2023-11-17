@@ -17,7 +17,7 @@ const Education = () => {
 
     return (
         <div id="education-container">
-            <span className="w-100 flex justify-center text-3xl mb-6">
+            <span className="w-100 flex justify-center section-title">
                 Education
             </span>
             <MuiAccordion accordionItems={educationData} />

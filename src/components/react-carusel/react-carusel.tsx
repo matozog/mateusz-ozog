@@ -43,11 +43,11 @@ const ReactCarusel: FC<IReactCaruselProps> = ({ projectCards }) => {
             keyBoardControl={true}
             // customTransition="all .5"
             // transitionDuration={500}
-            containerClass="carousel-container"
+            containerClass="carousel-container justify-center"
             removeArrowOnDeviceType={['tablet', 'mobile']}
             // deviceType={this.props.deviceType}
             dotListClass="custom-dot-list-style"
-            itemClass="px-2 mb-8"
+            itemClass="px-2 mb-8 md:!w-[500px] h-[500px]"
         >
             {projectCards.map((card, index) => (
                 <ProjectCard

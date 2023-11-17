@@ -18,9 +18,7 @@ const MenuItems: FC<IMenuItemsProps> = ({ menuClass }) => {
     };
 
     const handleOnClickExperienceLink = () => {
-        const experienceElement = document.querySelector(
-            '#experience-container'
-        );
+        const experienceElement = document.querySelector('#experience-title');
         experienceElement?.scrollIntoView(SCROLL_INTO_VIEW_OPTIONS);
     };
 

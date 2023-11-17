@@ -8,8 +8,8 @@ const Introduction = () => {
             }}
             className="gap-y-8 flex flex-col"
         >
-            <div className="sm:mx-0 introduction-container bg-black p-10">
-                <span className="text-justify block text-lg leading-relaxed">
+            <div className="sm:mx-0 introduction-container bg-dark-color p-10">
+                <span className="text-justify block text-lg md:text-2xl leading-relaxed md:leading-[2.5rem]">
                     Hi everyone! My name is Mateusz Ożóg and here are a few
                     words about me. I graduated Wroclaw University of Science
                     and Technology at the department of Electronics where I

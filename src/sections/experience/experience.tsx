@@ -24,7 +24,10 @@ const Experience = () => {
 
     return (
         <div id="experience-container">
-            <span className="w-100 flex justify-center text-3xl mb-6">
+            <span
+                id="experience-title"
+                className="w-100 flex justify-center section-title"
+            >
                 Experience
             </span>
             <ReactVerticalTimeline timelineElements={timeElements} />

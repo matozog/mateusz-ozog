@@ -5,4 +5,5 @@ export const GITHUB_URL = 'https://github.com/matozog';
 
 export const SCROLL_INTO_VIEW_OPTIONS: ScrollIntoViewOptions = {
     behavior: 'smooth',
+    block: 'center',
 };
