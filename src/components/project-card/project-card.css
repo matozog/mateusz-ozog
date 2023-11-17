@@ -1,0 +1,12 @@
+@tailwind components;
+@tailwind variants;
+
+@layer components {
+    .card-action-button {
+        @apply flex items-center p-2 text-main-green border-black hover:border-main-green;
+    }
+
+    .card-action-button-label {
+        @apply h-full flex items-center text-base font-semibold font-[Ubuntu];
+    }
+}
