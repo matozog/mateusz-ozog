@@ -11,12 +11,8 @@ import useResizeHook from '../../hooks/useResizeHook';
 import { useState } from 'react';
 
 const Header = () => {
-    const [isEnglishLanguage, setEnglishLanguage] = useState(true);
     const [isMenuOpen, setMenuOpen] = useState(false);
     const { isMobile } = useResizeHook();
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const handleOnChangeLanguage = () => setEnglishLanguage(!isEnglishLanguage);
 
     const handleOnClickContactButton = (url: string) => {
         window.open(url, '_blank');
