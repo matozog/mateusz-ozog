@@ -1,3 +1,4 @@
+import IMAGES from '../../assets/images';
 import useResizeHook from '../../hooks/useResizeHook';
 
 const HomeScreen = () => {
@@ -13,7 +14,7 @@ const HomeScreen = () => {
             </span>
             <div className="flex justify-end w-full">
                 <img
-                    src="src/assets/Mateusz_Ozog.jpg"
+                    src={IMAGES.selfiePic}
                     className={`rounded-full ml-4 mb-2 mr-2 border-white ${
                         isMobile ? 'border-4' : 'border-[16px]'
                     } p-2`}
