@@ -68,13 +68,13 @@ const Header = () => {
             {isMobile && (
                 <div
                     className={`flex flex-col absolute top-16 bg-dark-color
-                     pt-2 w-full transition-height ease-in-out duration-500 overflow-hidden ${
+                     w-full transition-height ease-in-out duration-500 overflow-hidden ${
                          isMobile && isMenuOpen
                              ? 'mobile-menu-open'
                              : 'mobile-menu-hidden'
                      }`}
                 >
-                    <MenuItems menuClass="flex flex-col gap-y-4 mx-auto" />
+                    <MenuItems menuClass="flex flex-col gap-y-4 mx-auto pt-2" />
                 </div>
             )}
         </div>

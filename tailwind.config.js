@@ -4,7 +4,8 @@ export default {
     theme: {
         extend: {
             transitionProperty: {
-                'height': 'height'
+                'height': 'height',
+                'max-height': 'max-height'
             },
             colors: {
                 'dark-color': '#1a1a1a',

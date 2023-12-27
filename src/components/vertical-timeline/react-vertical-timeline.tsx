@@ -1,4 +1,5 @@
 import 'react-vertical-timeline-component/style.min.css';
+import './react-vertical-timeline.css';
 
 import {
     VerticalTimeline,
@@ -25,7 +26,7 @@ const ReactVerticalTimeline: FC<IReactVerticalTimelineProps> = ({
             {timelineElements.map((element, index) => (
                 <VerticalTimelineElement
                     key={index}
-                    // dateClassName="text-4xl"
+                    dateClassName="timeline-date"
                     className="vertical-timeline-element--work text-xl"
                     contentStyle={{
                         background: '#1a1a1a',
