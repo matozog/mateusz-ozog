@@ -1,27 +1,19 @@
-import {
-    Accordion,
-    AccordionDetails,
-    AccordionSummary,
-    Typography,
-} from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { FC } from 'react';
 
 export interface IMuiAccordionItem {
-    title: string;
-    details: string;
+    title: JSX.Element;
+    details: JSX.Element;
 }
 
 interface IMuiAccordionItemProps {
-    titleText: string;
-    detailsText: string;
+    title: JSX.Element;
+    details: JSX.Element;
 }
 
-const MuiAccordionItem: FC<IMuiAccordionItemProps> = ({
-    detailsText,
-    titleText,
-}) => {
+const MuiAccordionItem: FC<IMuiAccordionItemProps> = ({ details, title }) => {
     return (
         <Accordion className="w-full bg-dark-color text-white">
             <AccordionSummary
@@ -32,15 +24,9 @@ const MuiAccordionItem: FC<IMuiAccordionItemProps> = ({
                 aria-controls="panel1a-content"
                 id="panel1a-header"
             >
-                <Typography className="text-lg md:text-2xl p-2 md:p-4 font-[Ubuntu]">
-                    {titleText}
-                </Typography>
+                {title}
             </AccordionSummary>
-            <AccordionDetails>
-                <Typography className="text-lg md:text-2xl p-2 md:p-4 font-[Ubuntu]">
-                    {detailsText}
-                </Typography>
-            </AccordionDetails>
+            <AccordionDetails>{details}</AccordionDetails>
         </Accordion>
     );
 };

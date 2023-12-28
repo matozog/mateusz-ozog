@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
-    const { isMobile } = useResizeHook();
+    const { isMDBreakpoint } = useResizeHook();
 
     const handleOnClickContactButton = (url: string) => {
         window.open(url, '_blank');
@@ -47,7 +47,7 @@ const Header = () => {
                     />
                 </div>
                 <div className="flex items-center gap-x-6 mr-3">
-                    {!isMobile ? (
+                    {!isMDBreakpoint ? (
                         <>
                             <MenuItems menuClass="flex gap-x-6" />
                         </>
@@ -65,11 +65,11 @@ const Header = () => {
                 /> */}
                 </div>
             </div>
-            {isMobile && (
+            {isMDBreakpoint && (
                 <div
                     className={`flex flex-col absolute top-16 bg-dark-color
                      w-full transition-height ease-in-out duration-500 overflow-hidden ${
-                         isMobile && isMenuOpen
+                         isMDBreakpoint && isMenuOpen
                              ? 'mobile-menu-open'
                              : 'mobile-menu-hidden'
                      }`}

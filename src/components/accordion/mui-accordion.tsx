@@ -13,8 +13,8 @@ const MuiAccordion: FC<IMuiAccordionProps> = ({ accordionItems }) => {
         <div className="gap-y-4 flex-col flex">
             {accordionItems.map((item, index) => (
                 <MuiAccordionItem
-                    detailsText={item.details}
-                    titleText={item.title}
+                    details={item.details}
+                    title={item.title}
                     key={`${item.title}_${index}`}
                 />
             ))}

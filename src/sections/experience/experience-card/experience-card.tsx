@@ -19,20 +19,22 @@ const ExperienceCard: FC<IExperienceCard> = ({
 
     return (
         <div className="flex flex-col gap-3 h-full">
-            <div className="flex items-center justify-between w-full">
-                <span className="font-bold text-2xl md:text-3xl mr-3">
+            <div
+                className="flex items-center justify-between w-full hover:cursor-pointer"
+                onClick={handleOnExpandCard}
+            >
+                <span className="font-bold text-2xl md:text-3xl mr-3 font-[Ubuntu]">
                     {position}
                 </span>
                 <KeyboardArrowDownIcon
                     fontSize="large"
-                    className={`hover:cursor-pointer ${
+                    className={`${
                         isExpanded ? 'rotate-180' : ''
                     } transition duration-500 `}
-                    onClick={handleOnExpandCard}
                 />
             </div>
             <div
-                className={`transition-max-height ease-in-out duration-500 h-auto`}
+                className={`transition-max-height ease-in-out duration-500 h-auto font-[Ubuntu] gap-3 flex flex-col`}
                 style={{
                     maxHeight: isExpanded ? '350px' : 0,
                     overflow: 'hidden',
