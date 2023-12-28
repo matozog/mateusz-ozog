@@ -11,12 +11,8 @@ import useResizeHook from '../../hooks/useResizeHook';
 import { useState } from 'react';
 
 const Header = () => {
-    const [isEnglishLanguage, setEnglishLanguage] = useState(true);
     const [isMenuOpen, setMenuOpen] = useState(false);
-    const { isMobile } = useResizeHook();
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const handleOnChangeLanguage = () => setEnglishLanguage(!isEnglishLanguage);
+    const { isMDBreakpoint } = useResizeHook();
 
     const handleOnClickContactButton = (url: string) => {
         window.open(url, '_blank');
@@ -51,7 +47,7 @@ const Header = () => {
                     />
                 </div>
                 <div className="flex items-center gap-x-6 mr-3">
-                    {!isMobile ? (
+                    {!isMDBreakpoint ? (
                         <>
                             <MenuItems menuClass="flex gap-x-6" />
                         </>
@@ -69,16 +65,16 @@ const Header = () => {
                 /> */}
                 </div>
             </div>
-            {isMobile && (
+            {isMDBreakpoint && (
                 <div
                     className={`flex flex-col absolute top-16 bg-dark-color
-                     pt-2 w-full transition-height ease-in-out duration-500 overflow-hidden ${
-                         isMobile && isMenuOpen
+                     w-full transition-height ease-in-out duration-500 overflow-hidden ${
+                         isMDBreakpoint && isMenuOpen
                              ? 'mobile-menu-open'
                              : 'mobile-menu-hidden'
                      }`}
                 >
-                    <MenuItems menuClass="flex flex-col gap-y-4 mx-auto" />
+                    <MenuItems menuClass="flex flex-col gap-y-4 mx-auto pt-2" />
                 </div>
             )}
         </div>

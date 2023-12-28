@@ -1,0 +1,20 @@
+@tailwind components;
+@tailwind variants;
+
+@layer components {
+    .education-title-date {
+        @apply text-xl font-bold p-2 font-[Ubuntu];
+
+        @screen md {
+            @apply p-4 text-3xl;
+        }
+    }
+
+    .education-title {
+        @apply text-xl font-bold p-2 font-[Ubuntu];
+
+        @screen md {
+            @apply p-4 text-3xl;
+        }
+    }
+}

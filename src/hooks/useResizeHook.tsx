@@ -1,13 +1,15 @@
 import { useEffect, useMemo, useState } from 'react';
 
 interface IResizeInfo {
-    isMobile: boolean;
+    isMDBreakpoint: boolean;
+    isSMBreakpoint: boolean;
 }
 
 const useResizeHook = (): IResizeInfo => {
     const [width, setWidth] = useState<number>(window.innerWidth);
 
-    const isMobile = useMemo(() => width <= 768, [width]);
+    const isMDBreakpoint = useMemo(() => width <= 768, [width]);
+    const isSMBreakpoint = useMemo(() => width <= 640, [width]);
 
     const handleWindowSizeChange = () => {
         setWidth(window.innerWidth);
@@ -21,7 +23,8 @@ const useResizeHook = (): IResizeInfo => {
     }, []);
 
     return {
-        isMobile,
+        isMDBreakpoint,
+        isSMBreakpoint,
     };
 };
 
