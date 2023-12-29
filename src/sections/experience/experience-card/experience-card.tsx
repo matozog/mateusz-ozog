@@ -1,17 +1,25 @@
 import { FC, useState } from 'react';
 
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import MuiChip from '../../../components/chip/mui-chip';
+
+export interface ITechnology {
+    label: string;
+    icon: string;
+}
 
 export interface IExperienceCard {
     position: string;
     company: string;
     responsibilities: string;
+    technologies?: ITechnology[];
 }
 
 const ExperienceCard: FC<IExperienceCard> = ({
     company,
     position,
     responsibilities,
+    technologies,
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -36,7 +44,7 @@ const ExperienceCard: FC<IExperienceCard> = ({
             <div
                 className={`transition-max-height ease-in-out duration-500 h-auto font-[Ubuntu] gap-3 flex flex-col`}
                 style={{
-                    maxHeight: isExpanded ? '350px' : 0,
+                    maxHeight: isExpanded ? '450px' : 0,
                     overflow: 'hidden',
                 }}
             >
@@ -55,6 +63,16 @@ const ExperienceCard: FC<IExperienceCard> = ({
                     <span className="text-lg md:text-xl flex tracking-normal">
                         {responsibilities}
                     </span>
+                </div>
+                <div className="flex gap-2 mt-3 flex-wrap overflow-y-auto">
+                    {technologies?.map((technology) => (
+                        <MuiChip
+                            label={technology.label}
+                            icon={technology.icon}
+                            key={`${company}_${technology.label}`}
+                            withoutLabelOnMobile
+                        />
+                    ))}
                 </div>
             </div>
         </div>

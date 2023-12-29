@@ -1,3 +1,12 @@
+import {
+    BootstrapTech,
+    FETechStack,
+    JavaTech,
+    JenkinsTech,
+    ViteTech,
+    WebComponentTech,
+    WebpackTech,
+} from '../../constants/icons';
 import ExperienceCard, {
     IExperienceCard,
 } from './experience-card/experience-card';
@@ -14,6 +23,7 @@ const workExperienceData: IWorkExperienceData[] = [
         position: 'Software Engineer',
         responsibilities: 'Creating mainly client side for web application.',
         date: '10.2023 - present',
+        technologies: [...FETechStack, BootstrapTech, ViteTech, JenkinsTech],
     },
     {
         company: 'Makolab',
@@ -21,6 +31,7 @@ const workExperienceData: IWorkExperienceData[] = [
         responsibilities:
             'Creating web components used on Toyota and Lexus pages.',
         date: '02.2022 - 07.2023',
+        technologies: [...FETechStack, WebComponentTech, WebpackTech],
     },
     {
         company: 'Capgemini',
@@ -28,6 +39,7 @@ const workExperienceData: IWorkExperienceData[] = [
         responsibilities:
             'Creating a new system used for planning shift work. My main responsibilities were creating client application and maintenance work as a tech lead.',
         date: '09.2020 - 01.2022',
+        technologies: [...FETechStack, JavaTech, WebpackTech],
     },
     {
         company: 'Capgemini',
@@ -35,6 +47,7 @@ const workExperienceData: IWorkExperienceData[] = [
         responsibilities:
             'Maintenance work and development of new features to existing applications which support the employee internal system (salaries, holidays etc.).',
         date: '03.2020 - 08.2020',
+        technologies: [...FETechStack, JavaTech],
     },
 ];
 
@@ -46,6 +59,7 @@ const timeElements: Array<ITimelineElementProps> = workExperienceData.map(
                 company={exp.company}
                 position={exp.position}
                 responsibilities={exp.responsibilities}
+                technologies={exp.technologies}
             />
         ),
     })
