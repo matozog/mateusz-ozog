@@ -1,4 +1,5 @@
 import './components/styles/common-headers.css';
+import 'animate.css';
 
 import Education from './sections/education/education';
 import Experience from './sections/experience/experience';
@@ -13,6 +14,7 @@ function App() {
     useEffect(() => {
         window.history.scrollRestoration = 'manual';
     }, []);
+    
     return (
         <div className="h-full w-full flex flex-col gap-y-6 overflow-y-auto">
             <Header />

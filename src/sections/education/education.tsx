@@ -36,7 +36,7 @@ const Education = () => {
 
     return (
         <div id="education-container">
-            <span className="w-100 flex justify-center section-title">
+            <span className="w-100 flex justify-center section-title animate__animated animate__jackInTheBox">
                 Education
             </span>
             <MuiAccordion accordionItems={educationAccordionItems} />
