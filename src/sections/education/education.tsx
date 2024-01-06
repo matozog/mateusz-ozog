@@ -1,9 +1,11 @@
+import { useMemo, useRef } from 'react';
+
 import EducationItemDetails from './education-item/education-item-details';
 import EducationItemTitle from './education-item/education-item-title';
 import { IEducationData } from '../../constants/types';
 import { IMuiAccordionItem } from '../../components/accordion/accordion-item/mui-accordion-item';
 import MuiAccordion from '../../components/accordion/mui-accordion';
-import { useMemo } from 'react';
+import useIntersectionHook from '../../hooks/useIntersectionHook';
 
 const educationData: IEducationData[] = [
     {
@@ -25,6 +27,8 @@ const educationData: IEducationData[] = [
 ];
 
 const Education = () => {
+    const headerRef = useRef<HTMLElement | null>(null);
+    const { isVisible } = useIntersectionHook(headerRef);
     const educationAccordionItems: IMuiAccordionItem[] = useMemo(
         () =>
             educationData.map((education) => ({
@@ -36,7 +40,12 @@ const Education = () => {
 
     return (
         <div id="education-container">
-            <span className="w-100 flex justify-center section-title animate__animated animate__jackInTheBox">
+            <span
+                ref={headerRef}
+                className={`w-100 flex justify-center section-title ${
+                    isVisible ? 'animate__jackInTheBox' : ''
+                } animate__animated`}
+            >
                 Education
             </span>
             <MuiAccordion accordionItems={educationAccordionItems} />

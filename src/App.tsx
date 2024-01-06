@@ -14,7 +14,7 @@ function App() {
     useEffect(() => {
         window.history.scrollRestoration = 'manual';
     }, []);
-    
+
     return (
         <div className="h-full w-full flex flex-col gap-y-6 overflow-y-auto">
             <Header />

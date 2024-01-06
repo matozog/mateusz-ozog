@@ -1,5 +1,7 @@
 import { IProjectCard } from '../../components/project-card/project-card';
 import ReactCarusel from '../../components/react-carusel/react-carusel';
+import useIntersectionHook from '../../hooks/useIntersectionHook';
+import { useRef } from 'react';
 
 const projects: IProjectCard[] = [
     {
@@ -12,15 +14,20 @@ const projects: IProjectCard[] = [
 ];
 
 const Projects = () => {
+    const headerRef = useRef<HTMLElement | null>(null);
+    const { isVisible } = useIntersectionHook(headerRef);
+
     return (
         <div className="flex justify-center flex-col" id="projects-container">
-            <span className="w-100 flex justify-center section-title">
+            <span
+                ref={headerRef}
+                className={`w-100 flex justify-center section-title ${
+                    isVisible ? 'animate__jackInTheBox' : ''
+                } animate__animated`}
+            >
                 Projects
             </span>
-            {/* <div className="justify-center w-full flex"> */}
             <ReactCarusel projectCards={projects} />
-            {/* <ProjectCard /> */}
-            {/* </div> */}
         </div>
     );
 };
