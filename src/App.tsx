@@ -19,8 +19,8 @@ function App() {
         <div className="h-full w-full flex flex-col gap-y-6 overflow-y-auto">
             <Header />
             <HomeScreen />
+            <Introduction />
             <div className="flex flex-col m-6 mt-2 gap-y-16 md:gap-y-24 justify-center max-w-screen-lg sm:mx-auto mx-4">
-                <Introduction />
                 <Education />
                 <Experience />
                 <Projects />

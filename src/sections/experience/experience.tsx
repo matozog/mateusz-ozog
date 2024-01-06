@@ -13,7 +13,7 @@ const Experience = () => {
                 ref={headerRef}
                 id="experience-title"
                 className={`w-100 flex justify-center section-title ${
-                    isVisible ? 'animate__jackInTheBox' : ''
+                    isVisible ? 'animate__pulse' : ''
                 } animate__animated`}
             >
                 Experience

@@ -84,3 +84,34 @@
         1.1% 5.5%
     );
 }
+
+.wave-container {
+    height: 80px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+}
+
+.wave {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="100"><defs><linearGradient id="a" x1="50%" x2="50%" y1="-10.959%" y2="100%"><stop stop-color="%2357BBC1" stop-opacity=".25" offset="0%"/><stop stop-color="%23015871" offset="100%"/></linearGradient></defs><path fill="url(%23a)" fill-rule="evenodd" d="M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z" transform="matrix(-1 0 0 1 1600 0)"/></svg>')
+        repeat-x;
+    height: 100%;
+    width: 200%;
+    animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

@@ -64,7 +64,7 @@ const ExperienceCard: FC<IExperienceCard> = ({
                         {responsibilities}
                     </span>
                 </div>
-                <div className="flex gap-2 mt-3 flex-wrap overflow-y-auto">
+                <div className="flex gap-2 mt-3 flex-wrap overflow-hidden">
                     {technologies?.map((technology) => (
                         <MuiChip
                             label={technology.label}
