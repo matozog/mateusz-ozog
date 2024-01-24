@@ -49,7 +49,10 @@ const Header = () => {
                 <div className="flex items-center gap-x-6 mr-3">
                     {!isMDBreakpoint ? (
                         <>
-                            <MenuItems menuClass="flex gap-x-6" />
+                            <MenuItems
+                                menuClass="flex gap-x-6"
+                                changeMenuState={setMenuOpen}
+                            />
                         </>
                     ) : (
                         <MenuIcon
@@ -74,7 +77,10 @@ const Header = () => {
                              : 'mobile-menu-hidden'
                      }`}
                 >
-                    <MenuItems menuClass="flex flex-col gap-y-4 mx-auto pt-2" />
+                    <MenuItems
+                        menuClass="flex flex-col gap-y-4 mx-auto pt-2"
+                        changeMenuState={setMenuOpen}
+                    />
                 </div>
             )}
         </div>
