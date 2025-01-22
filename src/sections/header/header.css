@@ -2,21 +2,21 @@
 @tailwind variants;
 
 @layer components {
-    .contact-button {
-        &:hover {
-            transition: all 0.2s linear;
-            transform: scale(1.25);
-            color: #185f28;
-        }
-
-        @apply hover:cursor-pointer;
+  .contact-button {
+    &:hover {
+      transition: all 0.2s linear;
+      transform: scale(1.25);
+      color: #185f28;
     }
 
-    .mobile-menu-hidden {
-        height: 0;
-    }
+    @apply hover:cursor-pointer;
+  }
 
-    .mobile-menu-open {
-        height: 130px;
-    }
+  .mobile-menu-hidden {
+    height: 0;
+  }
+
+  .mobile-menu-open {
+    height: 130px;
+  }
 }

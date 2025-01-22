@@ -2,7 +2,7 @@
 @tailwind variants;
 
 @layer components {
-    .section-title {
-        @apply text-5xl md:text-8xl mb-8 md:mb-16 text-main-green font-bold;
-    }
+  .section-title {
+    @apply text-5xl md:text-8xl mb-8 md:mb-16 text-main-green font-bold;
+  }
 }
