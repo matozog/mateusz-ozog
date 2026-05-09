@@ -22,7 +22,7 @@ const HomeScreen = () => {
         </span>
       </div>
       <div className="flex justify-center w-full text-3xl xs:text-4xl sm:text-6xl lg:text-8xl lg:leading-normal mt-8 mb-8 animate__animated animate__lightSpeedInLeft">
-        <span>Frontend developer</span>
+        <span>Software Engineer</span>
       </div>
     </div>
   );

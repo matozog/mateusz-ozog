@@ -14,13 +14,26 @@ const Introduction = () => {
       >
         <div className="sm:mx-0 p-10 max-w-screen-lg introduction-container bg-dark-color ">
           <span className="text-justify block text-lg md:text-2xl leading-relaxed md:leading-[2.5rem] text-white">
-            Hi everyone! My name is Mateusz Ożóg and here are a few words about
-            me. I graduated Wroclaw University of Science and Technology at the
-            department of Electronics where I achieved my master's degree in
-            computer science. Currently I have above 5 years experience in
-            working as a Software Engineer and Frontend developer. My current
-            position is strongly connected with frontend tasks, especially with
-            a web application using React technology.
+            <p>
+              Hi! <br />
+              My name is Mateusz Ożóg. I graduated from Wroclaw University of
+              Science and Technology, Faculty of Electronics, with a Master’s
+              degree in Computer Science.
+            </p>
+            <br />
+            <p>
+              I have over 6 years of experience as a Frontend Developer, mainly
+              working with React. For the past nearly 3 years, I have also been
+              expanding into backend development with Java, gradually moving
+              towards a more full-stack approach.
+            </p>
+            <br />
+            <p>
+              Currently, I focus on building and maintaining a React-based web
+              application with an emphasis on scalable and maintainable frontend
+              architecture. At the same time, I am also developing Java-based
+              backend services using Spring Boot.
+            </p>
           </span>
         </div>
       </div>
