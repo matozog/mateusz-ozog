@@ -1,3 +1,5 @@
+import { DARK_COLOR, MAIN_GREEN } from './src/constants/colors';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -20,13 +22,9 @@ export default {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
-      transitionProperty: {
-        height: 'height',
-        'max-height': 'max-height',
-      },
       colors: {
-        'dark-color': '#1a1a1a',
-        'main-green': '#185f28',
+        'dark-color': DARK_COLOR,
+        'main-green': MAIN_GREEN,
       },
     },
   },

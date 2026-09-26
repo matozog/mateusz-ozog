@@ -1,6 +1,6 @@
-import { MutableRefObject, Ref, useEffect, useRef, useState } from 'react';
+import { MutableRefObject, useEffect, useState } from 'react';
 
-const INTERSECTION_OPTIONS = {
+const INTERSECTION_OPTIONS: IntersectionObserverInit = {
   root: null,
   rootMargin: '0px',
   threshold: 0.3,
@@ -11,18 +11,17 @@ const useIntersectionHook = (
 ) => {
   const [isVisible, setVisible] = useState<boolean>(false);
 
-  // For now hook can process only one element at once
-  const intersectionCallbackFn = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => setVisible(entry.isIntersecting));
-  };
-
-  const observerRef: Ref<IntersectionObserver> = useRef(
-    new IntersectionObserver(intersectionCallbackFn, INTERSECTION_OPTIONS)
-  );
-
   useEffect(() => {
-    if (elementToObserve.current)
-      observerRef.current?.observe(elementToObserve.current);
+    const element = elementToObserve.current;
+    if (!element) return;
+
+    // For now hook can process only one element at once
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => setVisible(entry.isIntersecting));
+    }, INTERSECTION_OPTIONS);
+
+    observer.observe(element);
+    return () => observer.disconnect();
   }, [elementToObserve]);
 
   return {

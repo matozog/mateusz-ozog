@@ -4,22 +4,21 @@ import useIntersectionHook from '../../hooks/useIntersectionHook';
 import { useRef } from 'react';
 
 const Experience = () => {
-  const headerRef = useRef<HTMLElement | null>(null);
+  const headerRef = useRef<HTMLHeadingElement | null>(null);
   const { isVisible } = useIntersectionHook(headerRef);
 
   return (
-    <div id="experience-container">
-      <span
+    <section id="experience" className="scroll-mt-20">
+      <h2
         ref={headerRef}
-        id="experience-title"
-        className={`w-100 flex justify-center section-title ${
+        className={`w-full flex justify-center section-title ${
           isVisible ? 'animate__pulse' : ''
         } animate__animated`}
       >
         Experience
-      </span>
+      </h2>
       <ReactVerticalTimeline timelineElements={timeElements} />
-    </div>
+    </section>
   );
 };
 

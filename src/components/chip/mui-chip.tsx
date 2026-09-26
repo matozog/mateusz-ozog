@@ -1,8 +1,6 @@
-import { FC, useMemo } from 'react';
-
 import Chip from '@mui/material/Chip';
+import { FC } from 'react';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import useResizeHook from '../../hooks/useResizeHook';
 
 interface IMuiChipProps {
   label: string;
@@ -15,29 +13,20 @@ const MuiChip: FC<IMuiChipProps> = ({
   icon,
   withoutLabelOnMobile = false,
 }) => {
-  const { isSMBreakpoint } = useResizeHook();
-
-  const withoutLabel = useMemo(
-    () => isSMBreakpoint && withoutLabelOnMobile,
-    [isSMBreakpoint, withoutLabelOnMobile]
-  );
   return (
-    <>
-      {withoutLabel ? (
-        <Chip
-          className="w-fit py-5 text-white bg-dark-color font-[Ubuntu] text-xs md:text-sm pl-3"
-          avatar={<Icon className="text-white" icon={icon} />}
-          variant="outlined"
-        />
-      ) : (
-        <Chip
-          className="w-fit px-2 py-5 text-white bg-dark-color font-[Ubuntu] text-xs md:text-sm"
-          avatar={<Icon className="text-white" icon={icon} />}
-          label={label}
-          variant="outlined"
-        />
-      )}
-    </>
+    <Chip
+      className={`w-fit py-5 text-white bg-dark-color font-[Ubuntu] text-xs md:text-sm ${
+        withoutLabelOnMobile ? 'pl-3 sm:px-2' : 'px-2'
+      }`}
+      avatar={<Icon className="text-white" icon={icon} />}
+      // On mobile the label is only visually hidden, so screen readers still announce it
+      label={
+        <span className={withoutLabelOnMobile ? 'sr-only sm:not-sr-only' : ''}>
+          {label}
+        </span>
+      }
+      variant="outlined"
+    />
   );
 };
 
