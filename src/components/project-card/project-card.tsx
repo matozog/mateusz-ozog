@@ -10,29 +10,14 @@ import {
 
 import { FC } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { IProject } from '../../constants/types';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
-export interface IProjectCard {
-  title: string;
-  description: string;
-  technologies: string[];
-  linkToGithub: string;
-  linkToWebpage: string;
-}
-
 interface IProjectCardProps {
-  projectCard: IProjectCard;
+  projectCard: IProject;
 }
 
 const ProjectCard: FC<IProjectCardProps> = ({ projectCard }) => {
-  const handleOnClickGithub = () => {
-    window.open(projectCard.linkToGithub, '_blank');
-  };
-
-  const handleOnClickOpenInNew = () => {
-    window.open(projectCard.linkToWebpage, '_blank');
-  };
-
   return (
     <Card
       sx={{ maxWidth: 500 }}
@@ -42,42 +27,29 @@ const ProjectCard: FC<IProjectCardProps> = ({ projectCard }) => {
         <Typography
           gutterBottom
           variant="h5"
-          component="div"
+          component="h3"
           className="text-3xl md:text-4xl font-[Ubuntu] text-center mb-6"
         >
           {projectCard.title}
         </Typography>
         <div className="h-full">
           <iframe
-            src="https://matozog.github.io/code-snippets-manager-fe/#/"
+            src={projectCard.linkToWebpage}
+            title={`${projectCard.title} preview`}
+            loading="lazy"
             height="100%"
             width="100%"
           />
         </div>
-        {/* <Typography
-                    variant="body2"
-                    className="text-white text-2xl font-[Ubuntu]"
-                >
-                    {projectCard.description}
-                </Typography>
-                <div className="flex gap-4">
-                    {projectCard.technologies.map((technique, index) => (
-                        <Typography
-                            key={`${projectCard.title}_${technique}-${index}`}
-                            variant="body2"
-                            className="text-white text-lg font-[Ubuntu]"
-                        >
-                            {technique}
-                        </Typography>
-                    ))}
-                </div> */}
       </CardContent>
       <CardActions className="flex justify-center">
         <Button
           variant="outlined"
           size="small"
           className="card-action-button"
-          onClick={handleOnClickGithub}
+          href={projectCard.linkToGithub}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <GitHubIcon className="text-main-green" />
           <span className="card-action-button-label ml-2">Open GitHub</span>
@@ -86,7 +58,9 @@ const ProjectCard: FC<IProjectCardProps> = ({ projectCard }) => {
           className="card-action-button"
           variant="outlined"
           size="small"
-          onClick={handleOnClickOpenInNew}
+          href={projectCard.linkToWebpage}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <span className="card-action-button-label mr-2 ">
             Open in browser

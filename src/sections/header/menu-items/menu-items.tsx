@@ -1,36 +1,34 @@
 import { FC } from 'react';
-import LinkButton from '../../../components/buttons/link-button/link-button';
-import { SCROLL_INTO_VIEW_OPTIONS } from '../../../constants/constants';
+import Link from '@mui/material/Link';
 
 interface IMenuItemsProps {
   menuClass?: string;
   changeMenuState: (value: boolean) => void;
 }
 
+const MENU_ITEMS = [
+  { text: 'Education', href: '#education' },
+  { text: 'Experience', href: '#experience' },
+  { text: 'Projects', href: '#projects' },
+];
+
 const MenuItems: FC<IMenuItemsProps> = ({ menuClass, changeMenuState }) => {
-  const handleOnClickProjectsLink = () => {
-    const projectsElement = document.querySelector('#projects-container');
-    projectsElement?.scrollIntoView(SCROLL_INTO_VIEW_OPTIONS);
-    changeMenuState(false);
-  };
-
-  const handleOnClickEducationLink = () => {
-    const educationElement = document.querySelector('#education-container');
-    educationElement?.scrollIntoView(SCROLL_INTO_VIEW_OPTIONS);
-    changeMenuState(false);
-  };
-
-  const handleOnClickExperienceLink = () => {
-    const experienceElement = document.querySelector('#experience-title');
-    experienceElement?.scrollIntoView(SCROLL_INTO_VIEW_OPTIONS);
-    changeMenuState(false);
-  };
+  const handleOnClickMenuItem = () => changeMenuState(false);
 
   return (
     <div className={`${menuClass}`}>
-      <LinkButton text="Education" onClick={handleOnClickEducationLink} />
-      <LinkButton text="Experience" onClick={handleOnClickExperienceLink} />
-      <LinkButton text="Projects" onClick={handleOnClickProjectsLink} />
+      {MENU_ITEMS.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          underline="hover"
+          color="inherit"
+          className="text-xl hover:text-main-green focus-visible:text-main-green focus-visible:underline"
+          onClick={handleOnClickMenuItem}
+        >
+          {item.text}
+        </Link>
+      ))}
     </div>
   );
 };

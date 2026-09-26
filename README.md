@@ -1,27 +1,47 @@
-# React + TypeScript + Vite
+# Mateusz Ożóg – portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio page: introduction, education, work experience and projects.
 
-Currently, two official plugins are available:
+Live: https://matozog.github.io/mateusz-ozog/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech stack
 
-## Expanding the ESLint configuration
+- React 18 + TypeScript, built with Vite
+- Tailwind CSS (plus a few MUI components)
+- Deployed to GitHub Pages by GitHub Actions
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Scripts
 
-- Configure the top-level `parserOptions` property like this:
+| Command                | Description                                    |
+| ---------------------- | ---------------------------------------------- |
+| `npm run dev`          | Start the dev server (also exposed on the LAN) |
+| `npm run build`        | Type-check and build to `dist/`                |
+| `npm run preview`      | Serve the production build locally             |
+| `npm run lint`         | Run ESLint                                     |
+| `npm run format`       | Format all files with Prettier                 |
+| `npm run format:check` | Check formatting without writing               |
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Project structure
+
+```
+src/
+  analytics/    Google Analytics, loaded only after cookie consent
+  assets/       Images
+  components/   Reusable UI components
+  constants/    Shared types, colors, links and technology icons
+  data/         Page content – education, experience, projects
+  hooks/        Custom React hooks
+  sections/     Page sections (header, introduction, education, ...)
+  utils/        Small helpers
+public/         Favicon and social preview image
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Updating content
+
+To update the page content (jobs, education, projects), edit the files in `src/data/`.
+The "years of experience" in the introduction are calculated from the career start dates in `src/data/experience.ts`.
+
+## CI / deployment
+
+`.github/workflows/ci.yml` runs lint, format check and build on every push to `main` / `development` and on pull requests.
+A push to `main` additionally deploys the build to GitHub Pages.

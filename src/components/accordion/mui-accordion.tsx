@@ -11,11 +11,12 @@ interface IMuiAccordionProps {
 const MuiAccordion: FC<IMuiAccordionProps> = ({ accordionItems }) => {
   return (
     <div className="gap-y-4 flex-col flex">
-      {accordionItems.map((item, index) => (
+      {accordionItems.map((item) => (
         <MuiAccordionItem
+          id={item.id}
           details={item.details}
           title={item.title}
-          key={`${item.title}_${index}`}
+          key={item.id}
         />
       ))}
     </div>

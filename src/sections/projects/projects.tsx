@@ -1,34 +1,27 @@
-import { IProjectCard } from '../../components/project-card/project-card';
 import ReactCarusel from '../../components/react-carusel/react-carusel';
+import { projects } from '../../data/projects';
 import useIntersectionHook from '../../hooks/useIntersectionHook';
 import { useRef } from 'react';
 
-const projects: IProjectCard[] = [
-  {
-    description: 'This is project description',
-    linkToGithub: 'https://github.com/matozog/code-snippets-manager-fe',
-    linkToWebpage: 'https://matozog.github.io/code-snippets-manager-fe/#/',
-    technologies: ['react', 'typescript', 'java', 'mysql'],
-    title: 'Code snippet manager',
-  },
-];
-
 const Projects = () => {
-  const headerRef = useRef<HTMLElement | null>(null);
+  const headerRef = useRef<HTMLHeadingElement | null>(null);
   const { isVisible } = useIntersectionHook(headerRef);
 
   return (
-    <div className="flex justify-center flex-col" id="projects-container">
-      <span
+    <section
+      className="flex justify-center flex-col scroll-mt-20"
+      id="projects"
+    >
+      <h2
         ref={headerRef}
-        className={`w-100 flex justify-center section-title ${
+        className={`w-full flex justify-center section-title ${
           isVisible ? 'animate__pulse' : ''
         } animate__animated`}
       >
         Projects
-      </span>
+      </h2>
       <ReactCarusel projectCards={projects} />
-    </div>
+    </section>
   );
 };
 

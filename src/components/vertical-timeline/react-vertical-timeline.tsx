@@ -6,6 +6,8 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 
+import { DARK_COLOR, MAIN_GREEN } from '../../constants/colors';
+
 import { FC } from 'react';
 import WorkIcon from '@mui/icons-material/Work';
 
@@ -29,14 +31,14 @@ const ReactVerticalTimeline: FC<IReactVerticalTimelineProps> = ({
           dateClassName="timeline-date"
           className="vertical-timeline-element--work text-xl"
           contentStyle={{
-            background: '#1a1a1a',
+            background: DARK_COLOR,
             color: '#fff',
           }}
           contentArrowStyle={{
-            borderRight: '7px solid  #1a1a1a',
+            borderRight: `7px solid ${DARK_COLOR}`,
           }}
           iconStyle={{
-            background: '#185f28',
+            background: MAIN_GREEN,
             color: '#fff',
           }}
           icon={<WorkIcon />}

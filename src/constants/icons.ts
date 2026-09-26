@@ -1,4 +1,4 @@
-import { ITechnology } from '../sections/experience/experience-card/experience-card';
+import { ITechnology } from './types';
 
 const ReactTech: ITechnology = {
   icon: 'logos:react',
@@ -60,6 +60,11 @@ const JavaTech: ITechnology = {
   label: 'Java',
 };
 
+const SpringBootTech: ITechnology = {
+  icon: 'devicon:spring',
+  label: 'Spring Boot',
+};
+
 const WebpackTech: ITechnology = {
   icon: 'logos:webpack',
   label: 'Webpack',
@@ -88,5 +93,6 @@ export {
   TypeScriptTech,
   WebComponentTech,
   JavaTech,
+  SpringBootTech,
   WebpackTech,
 };
