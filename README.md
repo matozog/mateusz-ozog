@@ -43,5 +43,5 @@ The "years of experience" in the introduction are calculated from the career sta
 
 ## CI / deployment
 
-`.github/workflows/ci.yml` runs lint, format check and build on every push to `main` / `development` and on pull requests.
-A push to `main` additionally deploys the build to GitHub Pages.
+`.github/workflows/ci.yml` runs lint, format check and build on every push to `master` / `development` and on pull requests.
+A push to `master` additionally deploys the build to GitHub Pages.
