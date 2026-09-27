@@ -1,0 +1,17 @@
+// Cloudflare Worker (static assets only) serving the portfolio at https://ozogowie.pl/mateusz/.
+// CI copies dist/ into cf-dist/mateusz/, so request paths map 1:1 to files.
+{
+  "name": "mateusz-portfolio",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./cf-dist",
+    // /mateusz -> /mateusz/, so relative asset paths resolve correctly
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+  },
+  "routes": [
+    { "pattern": "ozogowie.pl/mateusz", "zone_name": "ozogowie.pl" },
+    { "pattern": "ozogowie.pl/mateusz/*", "zone_name": "ozogowie.pl" },
+  ],
+}

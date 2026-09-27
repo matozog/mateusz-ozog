@@ -36,6 +36,13 @@ jobs:
         with:
           path: dist
 
+      - name: Upload build for Cloudflare
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: build
@@ -50,3 +57,28 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  deploy-cloudflare:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: cloudflare
+      url: https://ozogowie.pl/mateusz/
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      # The Worker serves files by request path, so the build goes under /mateusz
+      - run: mkdir -p cf-dist/mateusz && cp -r dist/. cf-dist/mateusz/
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: '4'

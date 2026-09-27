@@ -2,13 +2,13 @@
 
 Personal portfolio page: introduction, education, work experience and projects.
 
-Live: https://matozog.github.io/mateusz-ozog/
+Live: https://ozogowie.pl/mateusz/ (mirror: https://matozog.github.io/mateusz-ozog/)
 
 ## Tech stack
 
 - React 18 + TypeScript, built with Vite
 - Tailwind CSS (plus a few MUI components)
-- Deployed to GitHub Pages by GitHub Actions
+- Deployed to Cloudflare Workers (ozogowie.pl/mateusz) and GitHub Pages by GitHub Actions
 
 ## Scripts
 
@@ -44,4 +44,4 @@ The "years of experience" in the introduction are calculated from the career sta
 ## CI / deployment
 
 `.github/workflows/ci.yml` runs lint, format check and build on every push to `master` / `development` and on pull requests.
-A push to `master` additionally deploys the build to GitHub Pages.
+A push to `master` additionally deploys the same build to GitHub Pages and to a Cloudflare Worker with static assets (`wrangler.jsonc`, served at `ozogowie.pl/mateusz`). The Cloudflare job needs the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets.
